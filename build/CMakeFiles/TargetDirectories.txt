@@ -1,0 +1,4 @@
+/home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles/rebuild_cache.dir
+/home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles/edit_cache.dir
+/home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles/test.dir
+/home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles/main.dir

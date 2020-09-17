@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+# Build folder
+./build/
 
 # Compiled Object files
 *.slo
@@ -15,6 +17,7 @@
 *.so
 *.dylib
 *.dll
+!libclass_loader.so
 
 # Fortran module files
 *.mod
@@ -30,3 +33,7 @@
 *.exe
 *.out
 *.app
+
+# Output files
+*.dat
+

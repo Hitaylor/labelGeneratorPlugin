@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -std=c++11 -pthread  -shared -Wl,-soname,libtest.so -o libtest.so CMakeFiles/test.dir/src/b.cpp.o CMakeFiles/test.dir/src/c.cpp.o   -L/home/ok/code/code/labelGeneratorPlugin/lib 
