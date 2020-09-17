@@ -58,7 +58,7 @@ namespace micros_label_gen
       printf("color(R,G,B)=(%d,%d,%d)\n", color[0], color[1], color[2]);
       memcpy(labelContent, (void *)color, 3);
       //sleep(5);
-      std::cout<<"YYYYYYTTTT"<<std::endl;
+   //   std::cout<<"YYYYYYTTTT"<<std::endl;
       //ofile<<"color: "<< color[0]<<color[1]<<color[2]<<endl;
       
       sleep(1);

@@ -76,20 +76,20 @@ namespace micros_label_gen
   {
     //int *value;
     int64_t time_last;
-    ofstream ofile111; //定义输出文件
-    std::cout<<"000000000000000001"<<std::endl;
+    // ofstream ofile111; //定义输出文件
+    // std::cout<<"000000000000000001"<<std::endl;
     // void *tmp;
     while (flag)
     {
     // ofile.open("/home/ok/code/code/out.txt");
-    std::cout<<"222222222222"<<std::endl;
+    //std::cout<<"222222222222"<<std::endl;
       sleep(2);
-      std::cout<<"3333333333333333333333"<<std::endl;
+      //std::cout<<"3333333333333333333333"<<std::endl;
       time_last = time(NULL); //改成时间函数
-      std::cout<<"4444444444444444444444444"<<std::endl;
+      //std::cout<<"4444444444444444444444444"<<std::endl;
       //tmp = value;
       memcpy(labelContent, &time_last, sizeof(time_last));
-      std::cout<<"555555555555555555"<<std::endl;
+     // std::cout<<"555555555555555555"<<std::endl;
       printf("&time_last = 0x%0x time_last =%ld, labelContent =0x%0x, *labelConent =%ld\n",&time_last, time_last, labelContent, *((int64_t *)labelContent));
      //ofile << "time：" << *time_last << endl;
 
