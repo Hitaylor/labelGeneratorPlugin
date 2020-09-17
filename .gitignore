@@ -1,7 +1,7 @@
 # Prerequisites
 *.d
 # Build folder
-./build/*
+build/*
 
 # Compiled Object files
 *.slo
