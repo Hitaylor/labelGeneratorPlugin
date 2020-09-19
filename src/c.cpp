@@ -78,6 +78,7 @@ namespace micros_label_gen
 
   void ColorLabelGeneratorPlugin::setFlag(int j)
   {
+    cout<<"ColorLabelGeneratorPlugin::setFlag flag="<<j<<endl;
     flag = j;
   }
 

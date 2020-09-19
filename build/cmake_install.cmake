@@ -1,8 +1,8 @@
-# Install script for directory: /home/ok/code/code/labelGeneratorPlugin
+# Install script for directory: /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "/opt/micros/1.0.1")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,6 +37,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so"
+         RPATH "/opt/micros/1.0.1/lib")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/plugins" TYPE SHARED_LIBRARY FILES "/home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build/libtime_color_labelGeneratorPlugin.0.1.0.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so"
+         OLD_RPATH "/opt/micros/1.0.1/lib:/home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/lib:"
+         NEW_RPATH "/opt/micros/1.0.1/lib")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/plugins/libtime_color_labelGeneratorPlugin.0.1.0.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
@@ -45,5 +68,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ok/code/code/labelGeneratorPlugin/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

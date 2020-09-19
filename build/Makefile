@@ -48,13 +48,47 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ok/code/code/labelGeneratorPlugin
+CMAKE_SOURCE_DIR = /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ok/code/code/labelGeneratorPlugin/build
+CMAKE_BINARY_DIR = /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +112,23 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles /home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build/CMakeFiles /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ok/code/code/labelGeneratorPlugin/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ok/code/code/plugin_manager_all_0919-1553/plugin_manager_all/labelGeneratorPlugin/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,30 +157,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named labelPluginDemo
+# Target rules for targets named time_color_labelGeneratorPlugin.0.1.0
 
 # Build rule for target.
-labelPluginDemo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 labelPluginDemo
-.PHONY : labelPluginDemo
+time_color_labelGeneratorPlugin.0.1.0: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 time_color_labelGeneratorPlugin.0.1.0
+.PHONY : time_color_labelGeneratorPlugin.0.1.0
 
 # fast build rule for target.
-labelPluginDemo/fast:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/build
-.PHONY : labelPluginDemo/fast
+time_color_labelGeneratorPlugin.0.1.0/fast:
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build
+.PHONY : time_color_labelGeneratorPlugin.0.1.0/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named test_time_color_label_main
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+test_time_color_label_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_time_color_label_main
+.PHONY : test_time_color_label_main
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+test_time_color_label_main/fast:
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/build
+.PHONY : test_time_color_label_main/fast
 
 src/b.o: src/b.cpp.o
 
@@ -142,8 +188,8 @@ src/b.o: src/b.cpp.o
 
 # target to build an object file
 src/b.cpp.o:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.o
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.o
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/b.cpp.o
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/b.cpp.o
 .PHONY : src/b.cpp.o
 
 src/b.i: src/b.cpp.i
@@ -152,8 +198,8 @@ src/b.i: src/b.cpp.i
 
 # target to preprocess a source file
 src/b.cpp.i:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.i
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.i
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/b.cpp.i
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/b.cpp.i
 .PHONY : src/b.cpp.i
 
 src/b.s: src/b.cpp.s
@@ -162,8 +208,8 @@ src/b.s: src/b.cpp.s
 
 # target to generate assembly for a file
 src/b.cpp.s:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.s
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.s
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/b.cpp.s
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/b.cpp.s
 .PHONY : src/b.cpp.s
 
 src/c.o: src/c.cpp.o
@@ -172,8 +218,8 @@ src/c.o: src/c.cpp.o
 
 # target to build an object file
 src/c.cpp.o:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.o
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.o
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/c.cpp.o
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/c.cpp.o
 .PHONY : src/c.cpp.o
 
 src/c.i: src/c.cpp.i
@@ -182,8 +228,8 @@ src/c.i: src/c.cpp.i
 
 # target to preprocess a source file
 src/c.cpp.i:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.i
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.i
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/c.cpp.i
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/c.cpp.i
 .PHONY : src/c.cpp.i
 
 src/c.s: src/c.cpp.s
@@ -192,8 +238,8 @@ src/c.s: src/c.cpp.s
 
 # target to generate assembly for a file
 src/c.cpp.s:
-	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.s
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.s
+	$(MAKE) -f CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/build.make CMakeFiles/time_color_labelGeneratorPlugin.0.1.0.dir/src/c.cpp.s
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/src/c.cpp.s
 .PHONY : src/c.cpp.s
 
 test/main.o: test/main.cpp.o
@@ -202,7 +248,7 @@ test/main.o: test/main.cpp.o
 
 # target to build an object file
 test/main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test/main.cpp.o
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/test/main.cpp.o
 .PHONY : test/main.cpp.o
 
 test/main.i: test/main.cpp.i
@@ -211,7 +257,7 @@ test/main.i: test/main.cpp.i
 
 # target to preprocess a source file
 test/main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test/main.cpp.i
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/test/main.cpp.i
 .PHONY : test/main.cpp.i
 
 test/main.s: test/main.cpp.s
@@ -220,7 +266,7 @@ test/main.s: test/main.cpp.s
 
 # target to generate assembly for a file
 test/main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test/main.cpp.s
+	$(MAKE) -f CMakeFiles/test_time_color_label_main.dir/build.make CMakeFiles/test_time_color_label_main.dir/test/main.cpp.s
 .PHONY : test/main.cpp.s
 
 # Help Target
@@ -229,10 +275,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... labelPluginDemo"
-	@echo "... main"
+	@echo "... time_color_labelGeneratorPlugin.0.1.0"
+	@echo "... install/strip"
+	@echo "... test_time_color_label_main"
 	@echo "... src/b.o"
 	@echo "... src/b.i"
 	@echo "... src/b.s"

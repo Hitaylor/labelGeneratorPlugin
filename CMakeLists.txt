@@ -1,5 +1,10 @@
-cmake_minimum_required (VERSION 2.6)
-  project (labelGeneratorPlugin) 
+cmake_minimum_required (VERSION 3.0)
+project (micros_labelGeneratorPlugin VERSION 0.1.0) 
+
+include(../micros.cmake)
+message(MICROS_VERSION: ${MICROS_VERSION})
+
+set(CMAKE_CXX_STANDARD 11)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -12,15 +17,11 @@ else()
      message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-set(${PROJECT_NAME}_HDRS
-  include/labelGeneratorBase.h
-  include/b.h
-  include/c.h
-)
-  include_directories (include "${PROJECT_SOURCE_DIR}/include")
 
-  FILE(GLOB SRC_LIST_CPP "${PROJECT_SOURCE_DIR}/src/*.cpp")
-  FILE(GLOB SRC_LIST_C "${PROJECT_SOURCE_DIR}/src/*.c")
+include_directories (include "${PROJECT_SOURCE_DIR}/include")
+
+FILE(GLOB SRC_LIST_CPP "${PROJECT_SOURCE_DIR}/src/*.cpp")
+FILE(GLOB SRC_LIST_C "${PROJECT_SOURCE_DIR}/src/*.c")
 
 
 set(LINK_DIR ${PROJECT_SOURCE_DIR}/lib/ )
@@ -28,17 +29,20 @@ set(CONSOLE_DIR /lib/x86_64-linux-gnu/)
 
 link_directories(${LINK_DIR} ${CONSOLE_DIR})
 
-  add_executable (main test/main.cpp src/b.cpp src/c.cpp)
+add_executable (test_time_color_label_main test/main.cpp src/b.cpp src/c.cpp)
 
-  target_link_libraries( main optimized
-    libclass_loader.so
-    libconsole_bridge.so
+target_link_libraries( test_time_color_label_main optimized
+                      libclass_loader.so
+                      libconsole_bridge.so
+)
 
- )
+add_library(time_color_labelGeneratorPlugin.0.1.0 SHARED src/b.cpp src/c.cpp)
+target_link_libraries(time_color_labelGeneratorPlugin.0.1.0 optimized
+                      libclass_loader.so
+                      libconsole_bridge.so
+)
 
-  add_library(labelPluginDemo SHARED ${SRC_LIST_CPP} ${${PROJECT_NAME}_HDRS})
-  target_link_libraries(labelPluginDemo optimized
-    libclass_loader.so
-    libconsole_bridge.so
-
- )
+#### install #####
+install(TARGETS time_color_labelGeneratorPlugin.0.1.0 LIBRARY DESTINATION lib/plugins)
+## install(DIRECTORY include/  DESTINATION include/micros_dataCapture)
+## install(TARGETS test_v4l2_plugin_main RUNTIME DESTINATION bin)

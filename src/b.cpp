@@ -44,6 +44,7 @@ namespace micros_label_gen
 
   void TimeLabelGeneratorPlugin::setFlag(int j)
   {
+  cout<<"TimeLabelGeneratorPlugin::setFlag flag="<<j<<endl;
     flag = j;
   }
 
