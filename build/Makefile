@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named labelPluginDemo
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+labelPluginDemo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 labelPluginDemo
+.PHONY : labelPluginDemo
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+labelPluginDemo/fast:
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/build
+.PHONY : labelPluginDemo/fast
 
 #=============================================================================
 # Target rules for targets named main
@@ -142,7 +142,7 @@ src/b.o: src/b.cpp.o
 
 # target to build an object file
 src/b.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/b.cpp.o
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.o
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.o
 .PHONY : src/b.cpp.o
 
@@ -152,7 +152,7 @@ src/b.i: src/b.cpp.i
 
 # target to preprocess a source file
 src/b.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/b.cpp.i
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.i
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.i
 .PHONY : src/b.cpp.i
 
@@ -162,7 +162,7 @@ src/b.s: src/b.cpp.s
 
 # target to generate assembly for a file
 src/b.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/b.cpp.s
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/b.cpp.s
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/b.cpp.s
 .PHONY : src/b.cpp.s
 
@@ -172,7 +172,7 @@ src/c.o: src/c.cpp.o
 
 # target to build an object file
 src/c.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/c.cpp.o
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.o
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.o
 .PHONY : src/c.cpp.o
 
@@ -182,7 +182,7 @@ src/c.i: src/c.cpp.i
 
 # target to preprocess a source file
 src/c.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/c.cpp.i
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.i
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.i
 .PHONY : src/c.cpp.i
 
@@ -192,7 +192,7 @@ src/c.s: src/c.cpp.s
 
 # target to generate assembly for a file
 src/c.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/c.cpp.s
+	$(MAKE) -f CMakeFiles/labelPluginDemo.dir/build.make CMakeFiles/labelPluginDemo.dir/src/c.cpp.s
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c.cpp.s
 .PHONY : src/c.cpp.s
 
@@ -231,7 +231,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... labelPluginDemo"
 	@echo "... main"
 	@echo "... src/b.o"
 	@echo "... src/b.i"

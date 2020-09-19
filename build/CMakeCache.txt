@@ -215,6 +215,9 @@ labelGeneratorPlugin_BINARY_DIR:STATIC=/home/ok/code/code/labelGeneratorPlugin/b
 //Value Computed by CMake
 labelGeneratorPlugin_SOURCE_DIR:STATIC=/home/ok/code/code/labelGeneratorPlugin
 
+//Dependencies for the target
+labelPluginDemo_LIB_DEPENDS:STATIC=optimized;libclass_loader.so;general;libconsole_bridge.so;
+
 
 ########################
 # INTERNAL cache entries
